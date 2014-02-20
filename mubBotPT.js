@@ -39,8 +39,8 @@ mubBot.settings.interactive = true;
 mubBot.settings.ruleSkip = true;
 mubBot.settings.removedFilter = true;
 
-//Emub                      DerpTheBass                 [#808]                          eBot
-mubBot.admins = ["50aeaf683e083e18fa2d187e", "50aeb07e96fba52c3ca04ca8", "50aeb607c3b97a2cb4c35ac1", "51264d96d6e4a966883b0702"];
+//Emub                      DerpTheBass                 [#808]                          eBot                          -Frosty
+mubBot.admins = ["50aeaf683e083e18fa2d187e", "50aeb07e96fba52c3ca04ca8", "50aeb607c3b97a2cb4c35ac1", "51264d96d6e4a966883b0702", "5155fcbe3e083e1c862e0a8e"];
 
 mubBot.filters.swearWords = ["fuck","shit","bitch","cunt","twat","fag","queer","dumbass","putaria","p0taria","viado","viadu","bugador","fi duma rapariga","merda","caga","retardado","bosta","fdp","vtnc","vsf","funde","viadao","victor sa","gay","cu","cú","viado","viadagem"];
 
@@ -184,7 +184,7 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat("É Novo no Plug.DJ? Não sabe como isso funciona? > http://i.imgur.com/rVsnr54.png?1");
                     break;
                     
-                    case "mubBot":
+                    case "mubpt":
                         API.sendChat("mubBot Criado por ,DerpTheBass' e por Emub. Traduzido para Português por -Frosty.");
                     break;
                         
