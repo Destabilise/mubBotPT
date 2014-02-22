@@ -42,11 +42,11 @@ mubBot.settings.removedFilter = true;
 //Emub                      DerpTheBass                 [#808]                          eBot                          -Frosty
 mubBot.admins = ["50aeaf683e083e18fa2d187e", "50aeb07e96fba52c3ca04ca8", "50aeb607c3b97a2cb4c35ac1", "51264d96d6e4a966883b0702", "5155fcbe3e083e1c862e0a8e"];
 
-mubBot.filters.swearWords = ["fuck","shit","bitch","cunt","twat","fag","queer","dumbass","putaria","p0taria","viado","viadu","bugador","fi duma rapariga","merda","caga","retardado","bosta","fdp","vtnc","vsf","funde","viadao","victor sa","gay","cu","cú","viado","viadagem"];
+mubBot.filters.swearWords = ["fuck","shit","bitch","cunt","twat","fag","queer","dumbass","putaria","p0taria","viado","viadu","bugador","fi duma rapariga","merda","caga","retardado","bosta","fdp","vtnc","vsf","funde","viadao","gay","cu","cú","viado","viadagem","rola","pau"];
 
-mubBot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jockey","towelhead","towel head","chink","gook","porch monkey","nigga","n1gga","preto","pretu","negro","black"];
+mubBot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jockey","towelhead","towel head","chink","gook","porch monkey","nigga","n1gga","preto","pretu","negro","black","branco","pret*","nigg*"];
 
-mubBot.filters.beggerWords = ["fan4fan","fan me","fan pls","fans please","fan please","fan 4 fan","fan back","give me fans","gimme fans","fan back","f4n","f@n"];
+mubBot.filters.beggerWords = ["fan4fan","fan me","fan pls","fans please","fan please","fan 4 fan","fan back","give me fans","gimme fans","fan back","f4n","f@n","troco fans","troca fan"];
 
 mubBot.misc.tacos = ["crispy taco","mexican taco","vegetarian taco","spicy taco","meatlover taco","cheese taco","wet hamburger","taco shell","delicious taco","gross taco"];
 
@@ -361,7 +361,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "pedo":
-                        API.sendChat("/me bear!");
+                        API.sendChat("/me bear! :bear:");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -539,7 +539,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "tsf":
-                    case "fpp":
+                    case "afpp":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             if(mubBot.settings.swearFilter){
                                 mubBot.settings.swearFilter = false;
@@ -553,7 +553,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "trf":
-                    case "fpr":
+                    case "afpr":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             if(mubBot.settings.racismFilter){
                                 mubBot.settings.racismFilter = false;
@@ -567,7 +567,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "tbf":
-                    case "fpf":
+                    case "afpf":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             if(mubBot.settings.beggerFilter){
                                 mubBot.settings.beggerFilter = false;
@@ -580,7 +580,7 @@ botMethods.djAdvanceEvent = function(data){
                         botMethods.save();
                         break;
                     case "thf":
-                    case "fph":    
+                    case "afph":    
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             if(mubBot.settings.historyFilter){
                                 mubBot.settings.historyFilter = false;!
@@ -978,7 +978,7 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat('/me Usar contas múltiplas para entrar na lista ou tocar musica não é permitido');
                         break;
                     case '21':
-                        API.sendChat('/me Don\'t spam emotes, don\'t use overly large emotes, and don\'t use emotes in your name (Referring to ponymotes)');
+                        API.sendChat('/me Não faça spam com emoticons');
                         break;
                     case '22':
                         API.sendChat('/me Não fique mendigando fans');
@@ -987,15 +987,12 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat('/me Songs such as Nigel, Pingas, etc. are subject to being skipped on any day but Sunday. !weird for full list');
                         break;
                     case '24':
-                        API.sendChat('/me Don\'t RP (roleplay) excessively in plug chat, keep it in Skype instead');
-                        break;
-                    case '25':
                         API.sendChat('/me Se você tem alguma queixa contra algum dos adms da sala, não fique argumentando no chat, apenas chame um dos Managers, Ou Co-Host/Host)');
                         break;
-                    case '26':
+                    case '25':
                         API.sendChat('/me Não use nomes longos ou ofensivos');
                         break;
-                    case '27':
+                    case '26':
                         API.sendChat('/me Divirtam-se na sala !');
                         break;
                     case '34':
@@ -1022,7 +1019,7 @@ botMethods.djAdvanceEvent = function(data){
         }
         if(API.getUser(data.fromID).permission > 1){
             switch(command[0]){
-                case 'ruleskip':
+                case 'add listadebanidos':
                     if(command[1].length === 13 && command[1].indexOf(':') === 1 && command[1].indexOf(1) === 0){
                         ruleSkip[command[1]] = {id: command[1], rule: command[2]};
                         $.getJSON("http://gdata.youtube.com/feeds/api/videos/"+command[1].substring(2)+"?v=2&alt=jsonc&callback=?", function(json){
