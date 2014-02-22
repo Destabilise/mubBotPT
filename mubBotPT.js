@@ -485,7 +485,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "travar":
                     if(API.getUser(data.fromID).permission > 1){
                         if(typeof command[1] === "undefined"){
-                            API.moderateRoomProps(true);
+                            API.moderateRoomProps(true,true);
                             break;
                             
                     case "destravar":
