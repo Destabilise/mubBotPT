@@ -492,6 +492,7 @@ botMethods.djAdvanceEvent = function(data){
                     if(API.getUser(data.fromID).permission > 1){
                         if(typeof command[1] === "undefined"){
                             API.moderateRoomProps(false,true);
+                            break;
 
                     case 'cancel':
                         cancel = true;
