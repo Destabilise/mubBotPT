@@ -181,11 +181,11 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "ajuda":
-                        API.sendChat("É Novo no Plug.DJ? Não sabe como isso funciona? > http://i.imgur.com/rVsnr54.png?1");
+                        API.sendChat("/me É Novo no Plug.DJ? Não sabe como isso funciona? > http://i.imgur.com/rVsnr54.png?1");
                     break;
                     
-                    case "mubpt":
-                        API.sendChat("mubBot Criado por ,DerpTheBass' e por Emub. Traduzido para Português por -Frosty.");
+                    case "thebot":
+                        API.sendChat("/me mubBot Criado por ,DerpTheBass' e por Emub. Traduzido para Português por -Frosty.");
                     break;
                         
                     case "irc":
@@ -394,11 +394,11 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "temas":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
+                            API.sendChat("/me Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
+                            API.sendChat(command[1]+" /me Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
                         }else{
-                            API.sendChat("Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
+                            API.sendChat("/me Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -452,7 +452,7 @@ botMethods.djAdvanceEvent = function(data){
     });
 
     API.on(API.CHAT, function(data){
-        if(data.message.indexOf('!') === 0){
+        if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var command = msg.substring(1).split(' ');
             if(typeof command[2] != "undefined"){
@@ -750,7 +750,7 @@ botMethods.djAdvanceEvent = function(data){
     });
 
     API.on(API.CHAT, function(data){
-        if(data.message.indexOf('!') === 0){
+        if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var command = msg.substring(1).split(' ');
             if(typeof command[2] != "undefined"){
@@ -911,7 +911,7 @@ botMethods.djAdvanceEvent = function(data){
     });
 
     API.on(API.CHAT, function(data){
-        if(data.message.indexOf('!leia ') === 0){
+        if(data.message.indexOf('.leia ') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var command = msg.substring(1).split(' ');
 
