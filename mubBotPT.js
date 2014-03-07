@@ -384,8 +384,16 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
+                    case "etdregras":
+                        API.sendChat("/me Regras da Sala - http://goo.gl/2K0xh8 !");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                                                
                     case "regras":
-                        API.sendChat("/me Regras da Sala - http://goo.gl/2K0xh8!");
+                        API.sendChat("/me Regras da Sala - http://goo.gl/2K0xh8 !");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
