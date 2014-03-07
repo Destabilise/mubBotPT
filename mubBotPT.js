@@ -752,7 +752,7 @@ botMethods.djAdvanceEvent = function(data){
     API.on(API.CHAT, function(data){
         if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
-            var command = msg.substring(1).split(' ');
+            var command = msg.substring(1).split('.');
             if(typeof command[2] != "undefined"){
                 for(var i = 2; i<command.length; i++){
                     command[1] = command[1] + ' ' + command[i];
@@ -939,7 +939,7 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat('/me Spam no chat irá resultar em chutado');
                         break;
                     case '8':
-                        API.sendChat('/me FOR THE LOVE OF CELESTIA, CONTROL THE CANTERLOCK');
+                        API.sendChat('/me Entra na lista de espera, Obrigação de votar.');
                         break;
                     case '9':
                         API.sendChat('/me Há uma política de não tolerância para a briga');
