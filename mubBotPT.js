@@ -149,7 +149,7 @@ botMethods.djAdvanceEvent = function(data){
         if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
             var command = msg.substring(1).split('.');
-            if(typeof command[2] .= "undefined"){
+            if(typeof command[2] != "undefined"){
                 for(var i = 2; i<command.length; i++){
                     command[1] = command[1] + ' ' + command[i];
                 }
