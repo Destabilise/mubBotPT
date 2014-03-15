@@ -1186,7 +1186,7 @@ botMethods.djAdvanceEvent = function(data){
         setTimeout(function(){
             if(typeof response === 'undefined' && data.media.format != 2 && mubBot.settings.removedFilter){
                 API.sendChat('/me Este video poderá estar indisponivel!!');
-                botMethods.skip();
+                //botMethods.skip();
             }
         }, 1500);
 
