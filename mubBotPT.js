@@ -42,7 +42,7 @@ mubBot.settings.removedFilter = true;
 //Emub                      DerpTheBass                 [#808]                          eBot                          -Frosty
 mubBot.admins = ["50aeaf683e083e18fa2d187e", "50aeb07e96fba52c3ca04ca8", "50aeb607c3b97a2cb4c35ac1", "51264d96d6e4a966883b0702", "5155fcbe3e083e1c862e0a8e"];
 
-mubBot.filters.swearWords = ["fuck","shit","bitch","cunt","twat","fag","queer","dumbass","putaria","p0taria","viado","viadu","bugador","fi duma rapariga","merda","caga","retardado","bosta","fdp","vtnc","vsf","funde","viadao","gay","cu","cú","viado","viadagem","rola","pau"];
+mubBot.filters.swearWords = ["fuck","shit","bitch","cunt","twat","fag","queer","dumbass","putaria","p0taria","viado","viadu","bugador","fi duma rapariga","merda","caga","retardado","bosta","fdp","vtnc","vsf","funde","viadao","gay","viado","viadagem","rola","pau"];
 
 mubBot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jockey","towelhead","towel head","chink","gook","porch monkey","nigga","n1gga","preto","pretu","negro","black","branco","pret*","nigg*"];
 
@@ -313,7 +313,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "brutos":
-                        API.sendChat("/me Bugado!");
+                        API.sendChat("/me PC com AIDS! Joga saporra fora!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -415,7 +415,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                 
                     case "etd":
-                        API.sendChat("/me Grupo : https://www.facebook.com/groups/647914285267897/ | Página : https://www.facebook.com/ETDPlugdj | Twitter : https://twitter.com/ETDBR");
+                        API.sendChat("/me Grupo : https://www.facebook.com/groups/ETD.plug/ | Página : https://www.facebook.com/ETDPlugdj | Twitter : https://twitter.com/ETDBR");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -431,7 +431,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                                             
                     case "sweet":
-                        API.sendChat("/me PC com AIDS, Joga sapoha fora!");
+                        API.sendChat("/me Bugador!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -502,6 +502,14 @@ botMethods.djAdvanceEvent = function(data){
                         cancel = true;
                         API.sendChat('AutoSkip cancelled');
                         break;
+                        
+                    case "lock":
+                        if( API.getUser(data.fromID).permission > 1){
+                            API.moderateLockWaitList(true);
+                                                    
+                    case "unlock":
+                        if( API.getUser(data.fromID).permission > 1){
+                            API.moderateLockWaitList(false);
 
                     case "lockskip":
                         if( API.getUser(data.fromID).permission > 1){
