@@ -16,6 +16,7 @@ mubBot.misc.version = "2.0.30";
 mubBot.misc.origin = "Este bot foi criado pelo Emub e ,DerpTheBass' sozinho, e é protegido por direitos autorais!";
 mubBot.misc.changelog = "Traduzido para Português";
 mubBot.misc.ready = true;
+mubBot.misc.LockWaitList = true; false;
 mubBot.misc.lockSkipping = true;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
