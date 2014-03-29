@@ -16,7 +16,7 @@ mubBot.misc.version = "2.0.30";
 mubBot.misc.origin = "Este bot foi criado pelo Emub e ,DerpTheBass' sozinho, e é protegido por direitos autorais!";
 mubBot.misc.changelog = "Traduzido para Português";
 mubBot.misc.ready = true;
-mubBot.misc.LockWaitList = true; false;
+mubBot.misc.LockWaitList = true, false;
 mubBot.misc.lockSkipping = true;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
@@ -506,12 +506,12 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "lock":
                         if( API.getUser(data.fromID).permission > 1){
-                            API.moderateLockWaitList(true);
+                            API.misc.moderateLockWaitList(true);
                             break;
                                                     
                     case "unlock":
                         if( API.getUser(data.fromID).permission > 1){
-                            API.moderateLockWaitList(false);
+                            API.misc.moderateLockWaitList(false);
                             break;
 
                     case "lockskip":
