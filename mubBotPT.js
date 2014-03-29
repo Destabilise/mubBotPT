@@ -506,10 +506,12 @@ botMethods.djAdvanceEvent = function(data){
                     case "lock":
                         if( API.getUser(data.fromID).permission > 1){
                             API.moderateLockWaitList(true);
+                            break;
                                                     
                     case "unlock":
                         if( API.getUser(data.fromID).permission > 1){
                             API.moderateLockWaitList(false);
+                            break;
 
                     case "lockskip":
                         if( API.getUser(data.fromID).permission > 1){
