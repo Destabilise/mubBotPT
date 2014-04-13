@@ -184,8 +184,12 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat("/me É Novo no Plug.DJ? Não sabe como isso funciona? > http://i.imgur.com/rVsnr54.png?1");
                     break;
                     
+                    case "help":
+                        API.sendChat("/me New in Plug.DJ and dont know how to use it? > http://i.imgur.com/rVsnr54.png?1");
+                    break;
+                    
                     case "thebot":
-                        API.sendChat("/me mubBot Criado por ,DerpTheBass' e por Emub. Traduzido para Português por -Frosty.");
+                        API.sendChat("/me mubBot Criado por ,DerpTheBass' e por Emub. Traduzido para Português por iFrooosty.");
                     break;
                         
                     case "irc":
@@ -298,6 +302,21 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "musica":
+                        if(API.getMedia().format == 1){
+                            API.sendChat("@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
+                        }else{
+                            var id = API.getMedia().cid;
+                            SC.get('/tracks', { ids: id,}, function(tracks) {
+                                API.sendChat("@"+data.from+" "+tracks[0].permalink_url);
+                            });
+                        }
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "song":
                         if(API.getMedia().format == 1){
                             API.sendChat("@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
                         }else{
