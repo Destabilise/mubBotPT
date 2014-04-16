@@ -474,7 +474,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                                                                         
                     case "imfrosty":
-                        API.sendChat("/me | Twitter : https://twitter.com/FrostyPlugdj1 || Skype : ifrooosty || Facebook : https://www.facebook.com/profile.php?id=100007806607228 |");
+                        API.sendChat("/me | Twitter : https://twitter.com/iFrooosty || Skype : ifrooosty || Facebook : https://www.facebook.com/profile.php?id=100007806607228 |");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
