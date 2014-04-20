@@ -562,7 +562,7 @@ botMethods.djAdvanceEvent = function(data){
                               API.moderateLockWaitList(false);
                             }, 650);
                         }else{
-                            API.sendChat("Este comando pode ser usado apenas por administradores!"");
+                            API.sendChat("Este comando pode ser usado apenas por administradores!");
                         }
                         break;
                     case 'rvf':
