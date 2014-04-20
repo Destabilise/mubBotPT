@@ -458,7 +458,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                                                 
                     case "critical":
-                        API.sendChat("/me guei");
+                        API.sendChat("/me guei!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -466,7 +466,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                                                 
                     case "fusion":
-                        API.sendChat("/me viadaum");
+                        API.sendChat("/me viadaum!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -475,6 +475,22 @@ botMethods.djAdvanceEvent = function(data){
                                                                                                                         
                     case "imfrosty":
                         API.sendChat("/me | Twitter : https://twitter.com/iFrooosty || Skype : ifrooosty || Facebook : https://www.facebook.com/profile.php?id=100007806607228 |");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                                                                                                                        
+                    case "themars":
+                        API.sendChat("/me Funkeiro!");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                                                                                                                                                
+                    case "Filed":
+                        API.sendChat("/me Farmador! :eyes:");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
