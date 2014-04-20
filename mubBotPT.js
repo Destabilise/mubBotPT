@@ -16,7 +16,7 @@ mubBot.misc.version = "2.0.30";
 mubBot.misc.origin = "Este bot foi criado pelo Emub e ,DerpTheBass' sozinho, e é protegido por direitos autorais!";
 mubBot.misc.changelog = "Traduzido para Português";
 mubBot.misc.ready = true;
-mubBot.misc.lockSkipping = true;
+mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
 
@@ -532,6 +532,22 @@ botMethods.djAdvanceEvent = function(data){
                         }
                     }
                         break;
+                        
+                    case "unlock":
+                    if(API.getUser(data.fromID).permission > 1){
+                        if(typeof command[1] === "undefined"){
+                            API.moderateLockWaitList(false);
+                        }
+                    }
+                        break;
+                                                
+                    case "lock":
+                    if(API.getUser(data.fromID).permission > 1){
+                        if(typeof command[1] === "undefined"){
+                            API.moderateLockWaitList(true);
+                        }
+                    }
+                        break;
 
                     case 'cancel':
                         cancel = true;
@@ -539,13 +555,14 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "lockskip":
-                        if( API.getUser(data.fromID).permission > 1){
-                            API.moderateRoomProps(true, true);
-                            mubBot.misc.lockSkipping = true;
-                            mubBot.misc.lockSkipped = API.getDJ().id;
-                            setTimeout(function(){ API.moderateRemoveDJ(mubBot.misc.lockSkipped); }, 500);
+                        if( API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
+                            API.moderateLockWaitList(true);
+                            API.moderateForceSkip();
+                            setTimeout(function(){
+                              API.moderateLockWaitList(false);
+                            }, 650);
                         }else{
-                            API.sendChat("This command requires bouncer or higher!");
+                            API.sendChat("Este comando pode ser usado apenas por administradores!"");
                         }
                         break;
                     case 'rvf':
