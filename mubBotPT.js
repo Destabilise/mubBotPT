@@ -489,7 +489,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                                                                                                                                                 
-                    case "Filed":
+                    case "filed":
                         API.sendChat("/me Farmador! :eyes:");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -532,8 +532,16 @@ botMethods.djAdvanceEvent = function(data){
                         }
                     }
                         break;
-                        
-                    case "unlock":
+                    case "djinfo":
+                      {
+                        var total = API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
+                        API.sendChat("DJ atual: "+ API.getDJ().username +". Pontos: "+ total +" | Fans: "+ API.getDJ().fans +" | Curated: "+ API.getDJ().curatorPoints +".");
+                        mubBot.misc.ready = false;
+                        setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                      }  
+                      break;
+                      
+                    case "destrava":
                     if(API.getUser(data.fromID).permission > 1){
                         if(typeof command[1] === "undefined"){
                             API.moderateLockWaitList(false);
@@ -541,7 +549,7 @@ botMethods.djAdvanceEvent = function(data){
                     }
                         break;
                                                 
-                    case "lock":
+                    case "trava":
                     if(API.getUser(data.fromID).permission > 1){
                         if(typeof command[1] === "undefined"){
                             API.moderateLockWaitList(true);
@@ -554,7 +562,7 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat('AutoSkip cancelled');
                         break;
 
-                    case "lockskip":
+                    case "tpula":
                         if( API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             API.moderateLockWaitList(true);
                             API.moderateForceSkip();
