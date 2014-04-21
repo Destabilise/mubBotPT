@@ -532,10 +532,18 @@ botMethods.djAdvanceEvent = function(data){
                         }
                     }
                         break;
-                    case "djinfo":
+                    case "pontos":
                       {
                         var total = API.getUser().djPoints + API.getUser().listenerPoints + API.getUser().curatorPoints;
-                        API.sendChat("Pontos: "+ API.getUser().username +". Pontos: "+ total +" | Fans: "+ API.getUser().fans +" | Curated: "+ API.getUser().curatorPoints +".");
+                        API.sendChat("User : "+ API.getUser().username +". Pontos: "+ total +" | Fans: "+ API.getUser().fans +" | Curated: "+ API.getUser().curatorPoints +".");
+                        mubBot.misc.ready = false;
+                        setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                      }  
+                      break;
+                    case "djinfo":
+                      {
+                        var total = API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
+                        API.sendChat("DJ atual : "+ API.getDJ().username +". Pontos: "+ total +" | Fans: "+ API.getDJ().fans +" | Curated: "+ API.getDJ().curatorPoints +".");
                         mubBot.misc.ready = false;
                         setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                       }  
