@@ -532,14 +532,16 @@ botMethods.djAdvanceEvent = function(data){
                         }
                     }
                         break;
+                        
                     case "pontos":
                       {
-                        var total = API.getUser().djPoints + API.getUser().listenerPoints + API.getUser().curatorPoints;
-                        API.sendChat("User : "+ API.getUser().username +". Pontos: "+ total +" | Fans: "+ API.getUser().fans +" | Curated: "+ API.getUser().curatorPoints +".");
+                        var total = API.getUser(data.fromID).djPoints + API.getUser(data.fromID).listenerPoints + API.getUser(data.fromID).curatorPoints;
+                        API.sendChat("User : "+ API.getUser(data.fromID).username +". Pontos: "+ total +" | Fans: "+ API.getUser(data.fromID).fans +" | Curated: "+ API.getUser(data.fromID).curatorPoints +".");
                         mubBot.misc.ready = false;
                         setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                       }  
                       break;
+                      
                     case "djinfo":
                       {
                         var total = API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
