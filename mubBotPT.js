@@ -545,7 +545,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "djinfo":
                       {
                         var total = API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
-                        API.sendChat("DJ atual : "+ API.getDJ().username +". :yellow_heart: "+ total +" || :musical_note: "+ API.getDJ.djPoints +" || :+1: "+API.getDJ().listenerPoints +" || :star: "+ API.getDJ().fans +" | :purple_heart: "+ API.getDJ().curatorPoints +".");
+                        API.sendChat("DJ atual : "+ API.getDJ().username +". :yellow_heart: "+ total +" || :musical_note: "+ API.getDJ().djPoints +" || :+1: "+API.getDJ().listenerPoints +" || :star: "+ API.getDJ().fans +" | :purple_heart: "+ API.getDJ().curatorPoints +".");
                         mubBot.misc.ready = false;
                         setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                       }  
