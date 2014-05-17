@@ -499,12 +499,12 @@ botMethods.djAdvanceEvent = function(data){
                         
 case "eta":
 var rem = API.getTimeRemaining();
-var wlPos = API.getWaitListPosition();
+var wlPos = API.getWaitListPosition(data.fromID);
 var tempoRes;  
 if( wlPos === -1 )
 {
 tempoRes = (210*(wlPos+1)) + rem;
-API.sendChat('/em['+ data.from +'] Você será o dj em aproximadamente: ' + SecondsToHMS(tempoRes));
+API.sendChat('['+ data.from +'] Entre na lista de espera antes de usar o !eta :warning:');
 }
 else
 {
@@ -514,7 +514,7 @@ if(tempoRes < "6")
 {
 }
 else{
-API.sendChat("/em["+ data.from +"] Você será o dj em aproximadamente: " + SecondsToHMS(tempoRes)); 
+API.sendChat("["+ data.from +"] Você será o dj em: " + SecondsToHMS(tempoRes)); 
 }
 }
 break;
