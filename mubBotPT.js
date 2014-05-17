@@ -303,7 +303,7 @@ botMethods.djAdvanceEvent = function(data){
 
                     case "musica":
                         if(API.getMedia().format == 1){
-                            API.sendChat( ["+ username + "] "@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
+                            API.sendChat( "@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
                         }else{
                             var id = API.getMedia().cid;
                             SC.get('/tracks', { ids: id,}, function(tracks) {
@@ -318,7 +318,7 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "song":
                         if(API.getMedia().format == 1){
-                            API.sendChat( ["+ username + "] "@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
+                            API.sendChat( "@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
                         }else{
                             var id = API.getMedia().cid;
                             SC.get('/tracks', { ids: id,}, function(tracks) {
