@@ -157,7 +157,7 @@ botMethods.djAdvanceEvent = function(data){
             if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(data.fromID).permission > 1){
                 switch(command[0].toLowerCase()){
                     case "ping":
-                        API.sendChat("/me pong :P !");
+                        API.sendChat("/me ["+ username + "] pong :P !");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -181,15 +181,15 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "ajuda":
-                        API.sendChat("/me É Novo no Plug.DJ? Não sabe como isso funciona? > http://i.imgur.com/rVsnr54.png?1");
+                        API.sendChat("/me ["+ username + "] É Novo no Plug.DJ? Não sabe como isso funciona? > http://i.imgur.com/rVsnr54.png?1");
                     break;
                     
                     case "help":
-                        API.sendChat("/me New in Plug.DJ and dont know how to use it? > http://i.imgur.com/rVsnr54.png?1");
+                        API.sendChat("/me ["+ username + "] New in Plug.DJ and dont know how to use it? > http://i.imgur.com/rVsnr54.png?1");
                     break;
                     
                     case "thebot":
-                        API.sendChat("/me mubBot Criado por ,DerpTheBass' e por Emub. Traduzido para Português por iFrooosty.");
+                        API.sendChat("/me ["+ username + "] mubBot Criado por ,DerpTheBass' e por Emub. Traduzido para Português por iFrooosty.");
                     break;
                         
                     case "irc":
@@ -208,11 +208,11 @@ botMethods.djAdvanceEvent = function(data){
 
                     case "commands":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Comandos do mubBot - http://playmc.pw/plug/commands.html");
+                            API.sendChat(" ["+ username + "] Comandos do mubBot - http://playmc.pw/plug/commands.html");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Comandos do mubBot - http://playmc.pw/plug/commands.html");
+                            API.sendChat(command[1]+" ["+ username + "] Comandos do mubBot - http://playmc.pw/plug/commands.html");
                         }else{
-                            API.sendChat("Comandos do mubBot - http://playmc.pw/plug/commands.html");
+                            API.sendChat(" ["+ username + "] Comandos do mubBot - http://playmc.pw/plug/commands.html");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -222,11 +222,11 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "comandos":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Comandos do mubBot - http://goo.gl/p29e9w");
+                            API.sendChat(" ["+ username + "] Comandos do mubBot - http://goo.gl/p29e9w");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Comandos do mubBot - http://goo.gl/p29e9w");
+                            API.sendChat(command[1]+" ["+ username + "] Comandos do mubBot - http://goo.gl/p29e9w");
                         }else{
-                            API.sendChat("Comandos do mubBot - http://goo.gl/p29e9w");
+                            API.sendChat(" ["+ username + "] Comandos do mubBot - http://goo.gl/p29e9w");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -303,7 +303,7 @@ botMethods.djAdvanceEvent = function(data){
 
                     case "musica":
                         if(API.getMedia().format == 1){
-                            API.sendChat("@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
+                            API.sendChat( ["+ username + "] "@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
                         }else{
                             var id = API.getMedia().cid;
                             SC.get('/tracks', { ids: id,}, function(tracks) {
@@ -318,7 +318,7 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "song":
                         if(API.getMedia().format == 1){
-                            API.sendChat("@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
+                            API.sendChat( ["+ username + "] "@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
                         }else{
                             var id = API.getMedia().cid;
                             SC.get('/tracks', { ids: id,}, function(tracks) {
@@ -332,7 +332,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "brutos":
-                        API.sendChat("/me PC com AIDS! Joga saporra fora!");
+                        API.sendChat("/me ["+ username + "] PC com AIDS! Joga saporra fora!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -340,7 +340,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "assis":
-                        API.sendChat("/me Broxa!");
+                        API.sendChat("/me ["+ username + "] Broxa!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -348,7 +348,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "jaum":
-                        API.sendChat("/me viadaum!");
+                        API.sendChat("/me ["+ username + "] viadaum!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -356,7 +356,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "hiana":
-                        API.sendChat("/me tezuda!");
+                        API.sendChat("/me ["+ username + "] tezuda!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -364,7 +364,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "ipasoca":
-                        API.sendChat("/me noia!");
+                        API.sendChat("/me ["+ username + "] noia!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -372,7 +372,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "eltoon":
-                        API.sendChat("/me jhown!");
+                        API.sendChat("/me ["+ username + "] jhown!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -380,7 +380,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "pedo":
-                        API.sendChat("/me bear! :bear:");
+                        API.sendChat("/me ["+ username + "] bear! :bear:");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -388,7 +388,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "guilherme":
-                        API.sendChat("/me verme!");
+                        API.sendChat("/me ["+ username + "] verme!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -396,7 +396,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                 
                     case "frosty":
-                        API.sendChat("/me foda!");
+                        API.sendChat("/me ["+ username + "] foda!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -404,7 +404,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "etdregras":
-                        API.sendChat("/me Regras da Sala //ETD// - http://goo.gl/2K0xh8 !");
+                        API.sendChat(" ["+ username + "] Regras da Sala //ETD// - http://goo.gl/2K0xh8 !");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -412,7 +412,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                 
                     case "regras":
-                        API.sendChat("/me Regras da Sala - http://goo.gl/Z3AIHQ !");
+                        API.sendChat(" ["+ username + "] Regras da Sala - http://goo.gl/Z3AIHQ !");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -421,11 +421,11 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "temas":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("/me Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Trance, Trap, Glitch-Hop, Hardstyle");
+                            API.sendChat(" ["+ username + "]  Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Trance, Trap, Glitch-Hop, Hardstyle");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" /me Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Trance, Trap, Glitch-Hop, Hardstyle");
+                            API.sendChat(command[1]+" ["+ username + "]  Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Trance, Trap, Glitch-Hop, Hardstyle");
                         }else{
-                            API.sendChat("/me Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Trance, Trap, Glitch-Hop, Hardstyle");
+                            API.sendChat(" ["+ username + "] Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Trance, Trap, Glitch-Hop, Hardstyle");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -434,7 +434,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                 
                     case "etd":
-                        API.sendChat("/me Grupo : https://www.facebook.com/groups/ETD.plug/ | Página : https://www.facebook.com/ETDPlugdj | Twitter : https://twitter.com/ETDBR");
+                        API.sendChat(" ["+ username + "]  Grupo : https://www.facebook.com/groups/ETD.plug/ | Página : https://www.facebook.com/ETDPlugdj | Twitter : https://twitter.com/ETDBR");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -442,7 +442,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                         
                     case "fdk":
-                        API.sendChat("/me Grupo : https://www.facebook.com/groups/622101017802230/");
+                        API.sendChat(" ["+ username + "]  Grupo : https://www.facebook.com/groups/622101017802230/");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -450,7 +450,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                                             
                     case "sweet":
-                        API.sendChat("/me Bugador!");
+                        API.sendChat("/me ["+ username + "] Bugador!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -458,7 +458,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                                                 
                     case "critical":
-                        API.sendChat("/me guei!");
+                        API.sendChat("/me ["+ username + "] guei!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -466,7 +466,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                                                 
                     case "fusion":
-                        API.sendChat("/me viadaum!");
+                        API.sendChat("/me ["+ username + "] viadaum!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -474,7 +474,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                                                                         
                     case "imfrosty":
-                        API.sendChat("/me | Twitter : https://twitter.com/iFrooosty || Skype : ifrooosty || Facebook : https://www.facebook.com/profile.php?id=100007806607228 |");
+                        API.sendChat(" ["+ username + "]  | Twitter : https://twitter.com/iFrooosty || Skype : ifrooosty || Facebook : https://www.facebook.com/profile.php?id=100007806607228 |");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -482,7 +482,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                                                                         
                     case "themars":
-                        API.sendChat("/me Funkeiro!");
+                        API.sendChat("/me ["+ username + "] Funkeiro!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -490,7 +490,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                                                                                                                                                 
                     case "filed":
-                        API.sendChat("/me Farmador! :eyes:");
+                        API.sendChat("/me ["+ username + "] Farmador! :eyes:");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -536,7 +536,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "pontos":
                       {
                         var total = API.getUser(data.fromID).djPoints + API.getUser(data.fromID).listenerPoints + API.getUser(data.fromID).curatorPoints;
-                        API.sendChat("User : "+ API.getUser(data.fromID).username +". || :yellow_heart: "+ total +" || :musical_note: "+ API.getUser(data.fromID).djPoints +" || :+1: "+ API.getUser(data.fromID).listenerPoints +" | :star: "+ API.getUser(data.fromID).fans +" | :purple_heart: "+ API.getUser(data.fromID).curatorPoints +".");
+                        API.sendChat(" ["+ username + "] User : "+ API.getUser(data.fromID).username +". || :yellow_heart: "+ total +" || :musical_note: "+ API.getUser(data.fromID).djPoints +" || :+1: "+ API.getUser(data.fromID).listenerPoints +" | :star: "+ API.getUser(data.fromID).fans +" | :purple_heart: "+ API.getUser(data.fromID).curatorPoints +".");
                         mubBot.misc.ready = false;
                         setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                       }  
@@ -545,7 +545,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "djinfo":
                       {
                         var total = API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
-                        API.sendChat("DJ atual : "+ API.getDJ().username +". :yellow_heart: "+ total +" || :musical_note: "+ API.getDJ().djPoints +" || :+1: "+API.getDJ().listenerPoints +" || :star: "+ API.getDJ().fans +" | :purple_heart: "+ API.getDJ().curatorPoints +".");
+                        API.sendChat(" ["+ username + "] DJ atual : "+ API.getDJ().username +". :yellow_heart: "+ total +" || :musical_note: "+ API.getDJ().djPoints +" || :+1: "+API.getDJ().listenerPoints +" || :star: "+ API.getDJ().fans +" | :purple_heart: "+ API.getDJ().curatorPoints +".");
                         mubBot.misc.ready = false;
                         setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                       }  
