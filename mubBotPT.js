@@ -558,7 +558,7 @@ break;
                     case "pontos":
                       {
                         var total = API.getUser(data.fromID).djPoints + API.getUser(data.fromID).listenerPoints + API.getUser(data.fromID).curatorPoints;
-                        API.sendChat(" ["+ username + "] User : "+ API.getUser(data.fromID).username +". || :yellow_heart: "+ total +" || :musical_note: "+ API.getUser(data.fromID).djPoints +" || :+1: "+ API.getUser(data.fromID).listenerPoints +" | :star: "+ API.getUser(data.fromID).fans +" | :purple_heart: "+ API.getUser(data.fromID).curatorPoints +".");
+                        API.sendChat("["+data.from+"] User : "+ API.getUser(data.fromID).username +". || :yellow_heart: "+ total +" || :musical_note: "+ API.getUser(data.fromID).djPoints +" || :+1: "+ API.getUser(data.fromID).listenerPoints +" | :star: "+ API.getUser(data.fromID).fans +" | :purple_heart: "+ API.getUser(data.fromID).curatorPoints +".");
                         mubBot.misc.ready = false;
                         setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                       }  
@@ -567,7 +567,7 @@ break;
                     case "djinfo":
                       {
                         var total = API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
-                        API.sendChat(" ["+ username + "] DJ atual : "+ API.getDJ().username +". :yellow_heart: "+ total +" || :musical_note: "+ API.getDJ().djPoints +" || :+1: "+API.getDJ().listenerPoints +" || :star: "+ API.getDJ().fans +" | :purple_heart: "+ API.getDJ().curatorPoints +".");
+                        API.sendChat("["+data.from+"] DJ atual : "+ API.getDJ().username +". :yellow_heart: "+ total +" || :musical_note: "+ API.getDJ().djPoints +" || :+1: "+API.getDJ().listenerPoints +" || :star: "+ API.getDJ().fans +" | :purple_heart: "+ API.getDJ().curatorPoints +".");
                         mubBot.misc.ready = false;
                         setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                       }  
