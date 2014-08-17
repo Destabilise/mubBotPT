@@ -921,7 +921,7 @@ break;
                                 case 0:
                                     API.sendChat("Abraços? Esqueça isso!");
                                     setTimeout(function(){
-                                        API.sendChat("/me grabs @"+crowd[randomUser].username+" 's ass");
+                                        API.sendChat("/me agarra a bunda de @"+crowd[randomUser].username+" .");
                                     }, 650);
                                     break;
                                 case 1:
